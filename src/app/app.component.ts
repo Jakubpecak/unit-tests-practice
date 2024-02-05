@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'unit-tests';
+
+  constructor(private toastr: ToastrService) {}
+
+  showSuccess() {
+    this.toastr.success('Success message', 'Success');
+  }
 }
